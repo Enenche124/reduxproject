@@ -7,11 +7,11 @@ const Counter = ()=>{
     const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
     return (
-        <div>
+        <div className="flex">
             
             <h1>count : {count}</h1>
             <div >
-                <button onClick={()=> dispatch(increment())}>+</button>
+                <button className="bg-green-500" onClick={()=> dispatch(increment())}>+</button>
                 <button onClick={()=> dispatch(decrement())}>-</button>
                 <button onClick={() => dispatch(reset())}>reset</button>
             </div>
