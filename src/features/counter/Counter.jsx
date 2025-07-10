@@ -7,14 +7,17 @@ const Counter = ()=>{
     const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
     return (
-        <div className="flex">
+        <div  className="flex flex-col items-center gap-10 p-12">
+           
             
-            <h1>count : {count}</h1>
-            <div >
-                <button className="bg-green-500" onClick={()=> dispatch(increment())}>+</button>
-                <button onClick={()=> dispatch(decrement())}>-</button>
-                <button onClick={() => dispatch(reset())}>reset</button>
+            <div className="flex gap-12 ">
+                <button className="font-bold text-white rounded-lg bg-green-600 font-semibold py-2 px-8" onClick={()=> dispatch(increment())}>+</button>
+          <h1 className="font-bold">count : {count}</h1>
+                <button className="font-bold text-white rounded-lg bg-red-600 font-semibold py-2 px-8" onClick={()=> dispatch(decrement())}>-</button>
+                
             </div>
+            
+            <button className="font-bold text-white rounded-lg bg-red-600 font-semibold py-2 px-8" onClick={() => dispatch(reset())}>reset</button>
         </div>
     )
 }
